@@ -1,0 +1,174 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.notification-container {
+    position: fixed;
+    top: 10%;
+    left: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+
+.notification {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ecf0f1;
+    padding: 8px 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    animation: slideIn 0.5s ease-out;
+    width: 200px;
+    font-size: 12px;
+    max-width: 100%;
+    word-wrap: break-word;
+    transform: rotate(-2deg);
+    border-radius: 0;
+    position: relative;
+}
+
+.notification-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 23px;
+}
+
+.notification-title {
+    font-weight: 800;
+    color: #f39c12;
+    white-space: nowrap;
+}
+
+.notification-icon {
+    font-size: 20px;
+    color: #f39c12;
+    flex-shrink: 0;
+}
+
+.notification-message {
+    font-size: 13px;
+    color: #ffffff;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.notification::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 2px;
+    height: 100%;
+    background-color: #f39c12;
+    box-shadow: 0 0 5px #f39c12, 0 0 10px #f39c12;
+    opacity: 0.6;
+    animation: lineDrop 1s infinite alternate;
+}
+
+.notification::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 2px;
+    height: 100%;
+    background-color: #f39c12;
+    box-shadow: 0 0 5px #f39c12, 0 0 10px #f39c12;
+    opacity: 0.6;
+    animation: lineRise 1s infinite alternate;
+}
+
+.notification::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #f39c12;
+    box-shadow: 0 0 5px #f39c12, 0 0 10px #f39c12;
+    opacity: 0.6;
+    animation: lineMoveUp 1s infinite alternate;
+}
+
+.notification::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #f39c12;
+    box-shadow: 0 0 5px #f39c12, 0 0 10px #f39c12;
+    opacity: 0.6;
+    animation: lineMoveDown 1s infinite alternate;
+}
+
+@keyframes lineDrop {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes lineRise {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes lineMoveUp {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes lineMoveDown {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-120%) rotate(-5deg);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) rotate(-5deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0) rotate(-5deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-120%) rotate(-5deg);
+        opacity: 0;
+    }
+}
