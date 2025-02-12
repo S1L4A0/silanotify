@@ -19,5 +19,5 @@ function ShowNotification(icon, title, message, duration)
 end
 
 RegisterCommand('notify', function(source, args, rawCommand)
-    exports['silanotify']:ShowNotification("fa fa-envelope", "Exodus Roleplay", "Ovo je test notifikacija.", 2500)
+    exports['s1l4a0notify']:ShowNotification("fa fa-envelope", "Exodus Roleplay", "Ovo je test notifikacija.", 2500)
 end, false)
